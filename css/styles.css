@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    overflow: hidden; /* Initially hide overflow on all screens */
+}
+
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+p1, h3 {
+    color: white;
+    padding: 10px;
+}
+
+h4 {
+    color: white;
+    padding-left: 60px;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+h5 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+h1, h2 {
+    margin: 0;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-heading {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+}
+
+/* website port page */
+.imagesPort {
+    height: 450px;
+    width: 650px;
+    display: block;
+}
+
+.content {
+    display: flex;
+}
+
+.text {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* One column for each item */
+    padding-left: 50px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column; /* Stack items vertically within the grid item */
+    width: 100%; /* Ensure each grid item takes full width */
+}
+
+/* About */
+.grid-container.about-page {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    padding: 20px;
+}
+
+.grid-container.about-page .imgme {
+    border-radius: 50%;
+    padding: 30px;
+    max-width: 100%;
+}
+
+.grid-container.about-page .about-text {
+    flex-grow: 1;
+    color: white;
+}
+
+.button-link {
+    display: inline-block;
+    background: darkblue;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+/* Contact */
+.contactForm {
+    width: 50%;
+    padding: 40px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.contactForm .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.contactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span {
+    color: #e91e73;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type="submit"] {
+    width: 100px;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#3d-container {
+    margin-top: 200px; /* Adjusted margin-top for better visibility */
+    width: 100%;
+    height: 400px;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+}
+
+.image-caption {
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        overflow: visible; /* Show overflow on small screens */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 100%;
+        background-color: black;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav-links a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-icon {
+        color: white;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    #3d-container {
+        height: 250px; /* Adjusted height for better visibility on small screens */
+    }
+}
